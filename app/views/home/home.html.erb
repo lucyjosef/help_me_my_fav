@@ -2,6 +2,7 @@
     <div>
         <%= form_with(url: "/items", method: "post") do %>
             <%= text_field_tag :link, nil, placeholder: "Scrap me baby" %>
+            <%= select("Site", "origin_site", Item::SCRAPPABLE_SITES, {:include_blank => true}) %>
             <%= submit_tag("GO") %>
         <% end %>
     </div>

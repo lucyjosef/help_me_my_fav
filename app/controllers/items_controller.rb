@@ -1,13 +1,13 @@
 class ItemsController < ApplicationController
-  include ItemHelper
+  # require 'pry'
 
   def rescrap
   end
 
   def create
+    data = ScrapperService.new(params[:link], params[:origin_site]).scrap
+    item = Item.create!(cost: data["cost"], name: data["name"], image_url: data["image_url"])
     binding.pry
-    @item = Item.create(link: params[:link])
-    ItemHelper.scrap(@item)
   end
 
   def delete

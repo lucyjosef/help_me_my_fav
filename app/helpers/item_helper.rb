@@ -5,9 +5,4 @@ module ItemHelper
 
     def rescrap(item)
     end
-
-    def scrap_new(item)
-        doc = HTTParty.get(item.link)
-        @parsed_page ||= Nokogiri::HTML(doc)
-    end
 end
