@@ -9,7 +9,7 @@ class ScrapperService
     def scrap
         doc = HTTParty.get(@link)
         @page ||= Nokogiri::HTML(doc)
-        if Item::SCRAPPABLE_SITES.include? @origin
+        if Item::SCRAPPABLE_SITES.include? @origin.to_s
             data = send("#{@origin}_scrapper") 
         else
             data = {}

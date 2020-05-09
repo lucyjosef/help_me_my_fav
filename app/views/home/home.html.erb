@@ -1,8 +1,9 @@
 <div class=home>
     <div>
         <%= form_with(url: "/items", method: "post") do %>
-            <%= text_field_tag :link, nil, placeholder: "Scrap me baby" %>
-            <%= select("Site", "origin_site", Item::SCRAPPABLE_SITES, {:include_blank => true}) %>
+            <%= text_field_tag :link, nil, placeholder: "Scrap me baby" %><br>
+            <%= select("Site", "origin_site", Item::SCRAPPABLE_SITES, {:include_blank => true}) %><br>
+            <%= select("List", "list_to_use", List.all.pluck(:name), {:include_blank => false}) %><br>
             <%= submit_tag("GO") %>
         <% end %>
     </div>

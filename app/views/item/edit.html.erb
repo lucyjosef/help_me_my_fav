@@ -1,2 +1,12 @@
-<h1>Item#edit</h1>
-<p>Find me in app/views/item/edit.html.erb</p>
+<div class="item-editor">
+    <div>
+        <%= form_with(url: "/items/#{@item.id}", method: "put") do %>
+            <%= text_field_tag :name, @item.name, placeholder: "name"%><br>
+            <%= text_field_tag :cost, @item.cost, placeholder: "cost" %><br>
+            <%= text_field_tag :image_url, @item.image_url, placeholder: "image url" %><br>
+            
+
+            <%= submit_tag("Confirm") %>
+        <% end %>
+    </div>
+</div>
