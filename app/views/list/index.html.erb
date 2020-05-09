@@ -1,0 +1,26 @@
+<h1>List</h1>
+
+<table>
+  <thead>
+    <tr>
+        <th>Color</th>
+        <th>Name</th>
+        <th>Max budget</th>
+        <th>Nb items</th>
+        <th>Status</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @lists.each do |l| %>
+      <tr>
+        <td style="background-color: <%= l.color %>"></td>
+        <td><%= link_to(l) do %><%= l.name %><% end %></td>
+        <td><%= l.max_budget %></td>
+        <td><%= l.items.count %></td>
+        <td><%= l.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

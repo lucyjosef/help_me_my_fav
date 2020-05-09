@@ -1,0 +1,8 @@
+<div class=home>
+    <div>
+        <%= form_with(url: "/items", method: "post") do %>
+            <%= text_field_tag :link, nil, placeholder: "Scrap me baby" %>
+            <%= submit_tag("GO") %>
+        <% end %>
+    </div>
+</div>

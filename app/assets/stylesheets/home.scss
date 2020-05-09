@@ -1,0 +1,31 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div.home {
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+    background-image: url('/home.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input[type="text"] {
+        width: 60vw;
+    }
+
+    input[type="submit"] {
+        border: none;
+        padding: 9px 30px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            color: blue;
+            background-color: white;
+        }
+    }
+}
