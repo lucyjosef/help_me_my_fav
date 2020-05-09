@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def delete
+    Item.find_by(id: params[:id]).delete
   end
 
   def update

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
   get 'home'            => 'home#home'
-  resources :items, only: %i[create edit update delete index show] do
+  resources :items, only: %i[create edit update index show] do
     member do
       get 'rescrap'
+    end
+    collection do
+      delete '/:id'   => 'items#delete' 
     end
   end
 

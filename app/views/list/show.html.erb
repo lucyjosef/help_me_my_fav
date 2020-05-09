@@ -1,2 +1,23 @@
-<h1>List#show</h1>
-<p>Find me in app/views/list/show.html.erb</p>
+<div class="main-view">
+    <div class="list-show">
+        <h1><%= @list.name %></h1>
+        <p>From <%= @list.min_budget %> --> <%= @list.max_budget %> EUR</p>
+        <ul>
+            <% @list.items.each do |item| %>
+                <li>
+                    <div class="item-element">
+                        <img src="<%= item.image_url %>" width="100px">
+                        <p><%= link_to(item) do %><%= item.name %><% end %></p>
+                        <p><%= item.cost %> Eur</p>
+                        <p><a href="<%= item.link %>" target="_blank">Lien</a></p>
+                        
+                    </div>
+                    <div class="item-element">
+                        <%= link_to "/items/#{item.id}", method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash"></i><% end %>
+                    </div>
+                </li>
+
+            <% end %>
+        </ul>
+    </div>
+</div>

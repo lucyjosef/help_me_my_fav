@@ -1,3 +1,29 @@
 // Place all the styles related to the List controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.list-show {
+    background-color: white;
+    min-height: 60%;
+    width: 60%;
+    padding: 10%;
+
+    ul {
+        list-style: none;
+        li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            i {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+div.lists-index {
+    padding: 10%;
+    background-color: white;
+}
+div.item-element {
+    width: 100%;
+    padding: 5%;
+}
