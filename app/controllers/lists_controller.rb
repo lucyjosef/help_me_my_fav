@@ -20,12 +20,13 @@ class ListsController < ApplicationController
   end
 
   def show
+    @lists = List.all()
     respond_to do |format| 
       format.html do 
-        if @list.nil? do
+        if @list.nil? 
           render "errors/404"
         else
-          render "list/index" unless @list.nil?
+          render "list/show" unless @list.nil?
         end
       end
     end

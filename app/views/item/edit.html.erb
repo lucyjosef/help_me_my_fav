@@ -1,4 +1,4 @@
-<div class="item-editor">
+<div class="item-editor main-view">
     <div>
         <%= form_with(url: "/items/#{@item.id}", method: "put") do %>
             <%= text_field_tag :name, @item.name, placeholder: "name"%><br>
